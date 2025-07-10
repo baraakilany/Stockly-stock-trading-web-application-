@@ -25,7 +25,7 @@ Welcome to **Stockly**, a university project built to provide users with a compr
 This repository is organized into two primary branches:
 
 - **`mobile` 📱** – Source code for the Flutter Mobile App (Android & iOS)  
-- **`website` 💻** – Source code for the Web Application (HTML, Bootstrap, JavaScript)
+- **`main` 💻** – Source code for the Web Application (HTML, Bootstrap, JavaScript)
 
 ---
 
@@ -69,20 +69,10 @@ This repository is organized into two primary branches:
 const FINNHUB_API_KEY = 'd1f7lvhr01qsg7davdsgd1f7lvhr01qsg7davdt0';
 ⚠️ For production, please register for your own free API key on Finnhub and replace the one above in script.js.
 
-👥 Project Team
-Developers
-Fadi Abbara
+👥 Developer:
 
 Baraa Alkilany
 
-Anas Zahran
-
-Hayyan Azzam
-
-Supervisors
-Mohammed Nazeh Alimam
-
-Erkin Erdogan
 
 🚀 Getting Started
 📱 Mobile App (main branch)
@@ -165,13 +155,13 @@ You can paste this directly into your `README.md` file in VS Code. Let me know i
 
 ## 🛠️ Technology Stack
 
-### 📱 Mobile App (`main` branch)
+### 📱 Mobile App (`mobile` branch)
 
 * **Framework:** Flutter
 * **Language:** Dart
 * **UI:** Material Design
 
-### 💻 Web App (`website` branch)
+### 💻 Web App (`main` branch)
 
 * **Structure:** HTML5
 * **Styling:** Tailwind CSS
