@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stockly - Smart Investing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+</head>
+<body class="bg-body font-sans">
+
+    <!-- App Root Container -->
+    <div id="app-root">
+
+        <!-- Welcome Page (Initial Load) -->
+        <div id="welcome-page" class="page active">
+            <div class="text-center w-100 max-w-md mx-auto p-4">
+                <header class="mb-5">
+                    <div class="d-flex justify-content-center align-items-center mb-4">
+                        <img src="image/logo.png" alt="Stockly Logo" class="w-20 h-20">
+                    </div>
+                    <h2 class="display-5 fw-bold text-body-emphasis mb-2">Welcome to Stockly</h2>
+                    <p class="text-secondary">Your personal gateway to smarter investing</p>
+                </header>
+                <main>
+                    <button id="lets-go-btn" class="btn btn-brand-green w-100 fw-semibold py-3 d-flex align-items-center justify-content-center">
+                        Let's Go <i class="bi bi-arrow-right ms-2"></i>
+                    </button>
+                </main>
+            </div>
+        </div>
+
+        <!-- Authentication Page (Login/Register) -->
+        <div id="auth-container" class="page">
+             <div class="w-100 max-w-sm mx-auto p-4">
+                <div class="d-flex justify-content-center align-items-center mb-4">
+                     <img src="image/logo.png" alt="Stockly Logo" class="w-16 h-16">
+                    <h1 class="h1 fw-bold ms-2 text-body-emphasis">Stockly</h1>
+                </div>
+                <!-- Login Form -->
+                <div id="login-page" class="auth-sub-page">
+                    <p class="text-center text-secondary mb-5">Your gateway to what's next in investing.</p>
+                    <form id="login-form">
+                        <div class="mb-3">
+                            <input type="email" id="login-email" placeholder="Email address" class="form-control form-control-lg bg-body-tertiary border-2" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="password" id="login-password" placeholder="Password" class="form-control form-control-lg bg-body-tertiary border-2" required>
+                        </div>
+                        <button type="submit" class="btn btn-brand-green w-100 fw-semibold py-3">Login</button>
+                    </form>
+                    <p class="text-center small mt-4">Don't have an account? <a href="#" id="show-register" class="fw-semibold text-brand-green">Register here</a></p>
+                </div>
+                <!-- Registration Form -->
+                <div id="register-page" class="auth-sub-page d-none">
+                   <p class="text-center text-secondary mb-5">Create Your Account</p>
+                    <form id="register-form">
+                        <input type="text" id="register-name" placeholder="Full Name" class="form-control form-control-lg bg-body-tertiary border-2 mb-3" required>
+                        <input type="email" id="register-email" placeholder="Email address" class="form-control form-control-lg bg-body-tertiary border-2 mb-3" required>
+                        <input type="password" id="register-password" placeholder="Password (min. 6 characters)" class="form-control form-control-lg bg-body-tertiary border-2" required>
+                        <button type="submit" class="btn btn-brand-green w-100 fw-semibold py-3 mt-4">Register</button>
+                    </form>
+                     <p class="text-center small mt-4">Already have an account? <a href="#" id="show-login-from-register" class="fw-semibold text-brand-green">Login here</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Application Page -->
+        <div id="home-page" class="page flex-column flex-lg-row align-items-stretch justify-content-start p-0">
+            <!-- Desktop Sidebar -->
+            <aside class="d-none d-lg-flex flex-column w-lg-250px bg-body-tertiary border-end p-4 flex-shrink-0">
+                <div class="d-flex align-items-center mb-5">
+                     <img src="image/logo.png" alt="Stockly Logo" class="w-10 h-10">
+                    <h1 class="h4 fw-bold ms-2 mb-0 text-body-emphasis">Stockly</h1>
+                </div>
+                <nav class="nav nav-pills flex-column">
+                    <a href="#" data-target="markets-content" class="nav-link d-flex align-items-center p-3 active"><i class="bi bi-graph-up-arrow me-3 fs-5"></i><span>Markets</span></a>
+                    <a href="#" data-target="portfolio-content" class="nav-link d-flex align-items-center p-3"><i class="bi bi-briefcase me-3 fs-5"></i><span>Portfolio</span></a>
+                    <a href="#" data-target="wishlist-content" class="nav-link d-flex align-items-center p-3"><i class="bi bi-star me-3 fs-5"></i><span>Wishlist</span></a>
+                    <a href="#" data-target="news-content" class="nav-link d-flex align-items-center p-3"><i class="bi bi-newspaper me-3 fs-5"></i><span>News</span></a>
+                    <a href="#" data-target="cart-content" class="nav-link d-flex align-items-center p-3"><i class="bi bi-cart me-3 fs-5"></i><span>Cart</span></a>
+                    <a href="#" data-target="pro-content" class="nav-link d-flex align-items-center p-3"><i class="bi bi-gem me-3 fs-5"></i><span>Pro Version</span></a>
+                    <a href="#" data-target="profile-content" class="nav-link d-flex align-items-center p-3"><i class="bi bi-gear me-3 fs-5"></i><span>Settings</span></a>
+                    <a href="#" data-target="admin-content" id="admin-nav-link" class="nav-link d-none d-flex align-items-center p-3"><i class="bi bi-shield-lock me-3 fs-5"></i><span>Admin</span></a>
+                </nav>
+            </aside>
+
+            <!-- Main Content Area -->
+            <div class="w-100 h-100 d-flex flex-column">
+                <header class="p-3 p-lg-4 flex-shrink-0 border-bottom">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                            <img class="user-avatar rounded-circle" src="https://placehold.co/100x100/E2E8F0/4A5568?text=U" alt="User profile picture">
+                            <div class="ms-3">
+                                <p class="small text-secondary mb-0" id="greeting-message">Good morning</p>
+                                <h2 id="dashboard-username" class="h5 fw-bold text-body-emphasis mb-0">Guest</h2>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="dropdown me-2">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="currency-selector" data-bs-toggle="dropdown" aria-expanded="false">
+                                    USD
+                                </button>
+                                <ul class="dropdown-menu" id="currency-menu" aria-labelledby="currency-selector">
+                                    <li><a class="dropdown-item" href="#" data-currency="USD">USD ($)</a></li>
+                                    <li><a class="dropdown-item" href="#" data-currency="EUR">EUR (€)</a></li>
+                                    <li><a class="dropdown-item" href="#" data-currency="JPY">JPY (¥)</a></li>
+                                    <li><a class="dropdown-item" href="#" data-currency="GBP">GBP (£)</a></li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-link text-secondary" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="bi bi-search fs-5"></i></button>
+                             <button class="btn btn-link text-secondary ms-2"><i class="bi bi-bell fs-5"></i></button>
+                        </div>
+                    </div>
+                </header>
+                
+                <div class="flex-grow-1 overflow-y-auto scrollable-content pb-5 pb-lg-0">
+                    <div class="container-fluid p-3 p-lg-4">
+                        
+                        <!-- MARKETS CONTENT -->
+                        <main id="markets-content" class="main-content-area">
+                            <div class="row g-3 mb-4">
+                                <div class="col-6"><div class="card h-100 p-3 bg-body-tertiary"><p class="small text-secondary mb-1">Portfolio Value</p><h4 id="summary-portfolio-value" class="fw-bold mb-0">--</h4></div></div>
+                                <div class="col-6"><div class="card h-100 p-3 bg-body-tertiary"><p class="small text-secondary mb-1">Available Cash</p><h4 id="summary-available-cash" class="fw-bold mb-0">--</h4></div></div>
+                            </div>
+                            
+                            <h3 class="h5 fw-bold mb-3">Market Overview</h3>
+                            <div id="market-indices-container" class="row g-3 mb-4">
+                                <div class="col-12 text-center p-4"><div class="spinner-border spinner-border-sm" role="status"></div></div>
+                            </div>
+
+                            <h3 class="h5 fw-bold mb-3">Recommended Investments</h3>
+                            <div class="d-grid mb-4">
+                                <button id="upgrade-to-pro-btn" class="btn btn-brand-gold fw-bold py-3"><i class="bi bi-gem me-2"></i>Upgrade to Pro Now</button>
+                            </div>
+
+                            <h3 class="h5 fw-bold mb-3">Popular Stocks (<span id="market-country">Global</span>)</h3>
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-4 col-md-2 text-center"><a href="#" class="stock-logo-card" onclick="event.preventDefault(); showStockDetail('AAPL')"><img src="image/apfel.png" alt="Apple logo"></a></div>
+                                <div class="col-4 col-md-2 text-center"><a href="#" class="stock-logo-card" onclick="event.preventDefault(); showStockDetail('GOOGL')"><img src="image/google.png" alt="Google logo"></a></div>
+                                <div class="col-4 col-md-2 text-center"><a href="#" class="stock-logo-card" onclick="event.preventDefault(); showStockDetail('MSFT')"><img src="image/microsoft.png" alt="Microsoft logo"></a></div>
+                                <div class="col-4 col-md-2 text-center"><a href="#" class="stock-logo-card" onclick="event.preventDefault(); showStockDetail('NVDA')"><img src="image/nvidia.png" alt="Nvidia logo"></a></div>
+                                <div class="col-4 col-md-2 text-center"><a href="#" class="stock-logo-card" onclick="event.preventDefault(); showStockDetail('AMZN')"><img src="image/amazon.png" alt="Amazon logo"></a></div>
+                                <div class="col-4 col-md-2 text-center"><a href="#" class="stock-logo-card" onclick="event.preventDefault(); showStockDetail('TSLA')"><img src="https://logotyp.us/files/tesla.svg" alt="Tesla logo" style="max-width: 50px;"></a></div>
+                            </div>
+                        </main>
+                        
+                        <main id="portfolio-content" class="main-content-area">
+                            <h2 class="h3 fw-bold mb-4">Portfolio</h2>
+                            <div class="row g-4 mb-4">
+                                <div class="col-md-6">
+                                    <div class="portfolio-summary-card">
+                                        <div class="text-secondary small">Total Value</div>
+                                        <div id="portfolio-total-value" class="display-5 fw-bold">--</div>
+                                        <div id="portfolio-day-change" class="fw-semibold">--</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="portfolio-summary-card">
+                                        <div class="text-secondary small">Available Cash</div>
+                                        <div id="portfolio-available-cash" class="display-5 fw-bold">--</div>
+                                        <div id="portfolio-cash-change" class="fw-semibold">--</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- **LAYOUT** -->
+                            <div class="d-flex justify-content-end mb-2">
+                                <div class="btn-group btn-group-sm" role="group" id="portfolio-chart-timeframe-selector">
+                                    <button type="button" class="btn btn-outline-secondary active" data-range="1D">Daily</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-range="1W">Weekly</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-range="1M">Monthly</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-range="1Y">Yearly</button>
+                                </div>
+                            </div>
+                            <div class="chart-container-large bg-body-tertiary rounded-4 p-2">
+                                <canvas id="portfolio-main-chart"></canvas>
+                            </div>
+
+                            <h3 class="h4 fw-bold mb-3 mt-5">Your Assets</h3>
+                            <div id="portfolio-assets-list" class="list-group">
+                            </div>
+                        </main>
+
+                        <main id="wishlist-content" class="main-content-area"></main>
+                        <main id="news-content" class="main-content-area"></main>
+                        <main id="cart-content" class="main-content-area"></main>
+                        <main id="pro-content" class="main-content-area"></main>
+                        <main id="profile-content" class="main-content-area"></main>
+                        <main id="admin-content" class="main-content-area"></main>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="d-lg-none position-fixed bottom-0 start-0 end-0 bg-body-tertiary border-top rounded-top-4 z-3">
+                <div class="d-flex justify-content-around align-items-center h-mobile-nav">
+                     <a href="#" data-target="markets-content" class="nav-link d-flex flex-column align-items-center p-2 rounded-3 active"><i class="bi bi-graph-up-arrow fs-5 mb-1"></i><span class="small-text">Markets</span></a>
+                     <a href="#" data-target="portfolio-content" class="nav-link d-flex flex-column align-items-center p-2 rounded-3"><i class="bi bi-briefcase fs-5 mb-1"></i><span class="small-text">Portfolio</span></a>
+                     <a href="#" data-target="wishlist-content" class="nav-link d-flex flex-column align-items-center p-2 rounded-3"><i class="bi bi-star fs-5 mb-1"></i><span class="small-text">Wishlist</span></a>
+                     <a href="#" data-target="cart-content" class="nav-link d-flex flex-column align-items-center p-2 rounded-3"><i class="bi bi-cart fs-5 mb-1"></i><span class="small-text">Cart</span></a>
+                     <a href="#" data-target="news-content" class="nav-link d-flex flex-column align-items-center p-2 rounded-3"><i class="bi bi-newspaper fs-5 mb-1"></i><span class="small-text">News</span></a>
+                     <a href="#" data-target="profile-content" class="nav-link d-flex flex-column align-items-center p-2 rounded-3"><i class="bi bi-person fs-5 mb-1"></i><span class="small-text">Profile</span></a>
+                </div>
+            </nav>
+        </div>
+        
+        <div id="stock-detail-page" class="page flex-column align-items-start justify-content-start bg-body">
+        </div>
+
+        <div id="edit-profile-page" class="page flex-column align-items-start justify-content-start bg-body">
+        </div>
+    </div>
+
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content bg-body">
+          <div class="modal-header"><h1 class="modal-title fs-5">Search Stocks</h1><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+          <div class="modal-body">
+            <input type="search" id="search-input" class="form-control" placeholder="Enter company, ticker, or country...">
+            <div id="search-results" class="mt-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="tradeModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-body">
+          <div class="modal-header"><h1 class="modal-title fs-5" id="tradeModalLabel">Trade</h1><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+          <div class="modal-body">
+            <form id="trade-form" novalidate>
+                <input type="hidden" id="trade-ticker"><input type="hidden" id="trade-action"><input type="hidden" id="trade-price">
+                <div class="mb-3"><label for="trade-shares" class="form-label">Number of Shares</label><input type="number" id="trade-shares" class="form-control form-control-lg" required min="1" step="1"></div>
+                <div class="p-3 bg-body-tertiary rounded-3">
+                    <div class="d-flex justify-content-between"><span>Current Price:</span> <span id="modal-current-price">--</span></div>
+                    <div class="d-flex justify-content-between"><span>Shares Owned:</span> <span id="modal-shares-owned">--</span></div>
+                    <hr>
+                    <div class="d-flex justify-content-between"><span>Available Cash:</span> <span id="modal-available-cash">--</span></div>
+                </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" id="add-to-cart-btn" class="btn btn-warning">Add to Cart</button>
+            <button type="submit" form="trade-form" id="confirm-trade-btn" class="btn">Confirm Trade</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="app-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img src="image/logo.png" class="rounded me-2" alt="logo" style="width:20px;">
+                <strong class="me-auto">Stockly</strong>
+                <small>Just now</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="toast-body-content"></div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@2.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="database.js"></script> 
+    <script src="auth.js"></script>
+    <script src="shopping-cart.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

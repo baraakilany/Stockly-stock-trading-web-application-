@@ -1,0 +1,204 @@
+/* --- Global & Fonts --- */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* --- Reusable Components & Utilities --- */
+.max-w-md { max-width: 448px; }
+.max-w-sm { max-width: 384px; }
+.max-w-xl { max-width: 672px; }
+.w-lg-250px { width: 250px; }
+.w-10 { width: 2.5rem; height: 2.5rem; }
+.w-16 { width: 4rem; height: 4rem; }
+.w-20 { width: 5rem; height: 5rem; }
+.user-avatar { width: 48px; height: 48px; object-fit: cover; }
+.user-avatar-large { width: 80px; height: 80px; object-fit: cover; }
+.asset-logo { width: 40px; height: 40px; object-fit: contain; }
+.h-mobile-nav { height: 80px; }
+.small-text { font-size: 0.75rem; }
+.payment-icon { height: 25px; object-fit: contain; }
+
+
+/* --- Page Transitions & Layout --- */
+.page {
+    width: 100%;
+    min-height: 100vh;
+    transition: opacity 0.3s ease-in-out;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.page.active {
+    display: flex;
+}
+#home-page.page.active {
+    align-items: stretch;
+}
+.scrollable-content {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.scrollable-content::-webkit-scrollbar {
+    display: none;
+}
+.main-content-area { display: none; }
+
+/* --- Custom Bootstrap Colors & Theme --- */
+.btn-brand-green {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #22c55e;
+    --bs-btn-border-color: #22c55e;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #16a34a;
+    --bs-btn-hover-border-color: #159544;
+    --bs-btn-active-bg: #159544;
+    --bs-btn-active-border-color: #14833D;
+}
+.btn-brand-red {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #ef4444;
+    --bs-btn-border-color: #ef4444;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #dc2626;
+    --bs-btn-hover-border-color: #ca2424;
+    --bs-btn-active-bg: #ca2424;
+    --bs-btn-active-border-color: #B52121;
+}
+.btn-brand-gold {
+    --bs-btn-color: #212529;
+    --bs-btn-bg: #f59e0b;
+    --bs-btn-border-color: #f59e0b;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #d97706;
+    --bs-btn-hover-border-color: #b45309;
+    --bs-btn-active-bg: #b45309;
+    --bs-btn-active-border-color: #92400e;
+}
+
+
+.text-brand-green { color: #22c55e !important; }
+.text-brand-red { color: #ef4444 !important; }
+.text-brand-amber { color: #f59e0b !important; }
+
+/* --- Form & Nav Overrides --- */
+.form-control:focus, .form-select:focus {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 0.25rem rgba(34, 197, 94, 0.25);
+}
+.nav-pills .nav-link, .nav-link {
+    color: var(--bs-secondary-color);
+}
+.nav-pills .nav-link.active, .nav-link.active {
+    color: #22c55e;
+    background-color: rgba(34, 197, 94, 0.1);
+}
+[data-bs-theme="dark"] .nav-pills .nav-link.active, [data-bs-theme="dark"] .nav-link.active {
+    background-color: rgba(34, 197, 94, 0.2);
+}
+
+/* --- Charting --- */
+.chart-container-large {
+    height: 256px;
+    position: relative;
+}
+
+/* **FIXED** Rule for chart controls */
+.chart-controls {
+    position: relative;
+    top: 0.4rem;
+    right: 0.4rem;
+    z-index: 10;
+}
+
+
+/* --- Stock Logo Cards --- */
+.stock-logo-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    padding: 1rem;
+    background-color: var(--bs-tertiary-bg);
+    border-radius: 1rem;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    text-decoration: none;
+}
+.stock-logo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+}
+.stock-logo-card img {
+    height: 40px;
+    max-width: 100%;
+    object-fit: contain;
+}
+[data-bs-theme="dark"] .stock-logo-card img[alt~="Apple"],
+[data-bs-theme="dark"] .stock-logo-card img[alt~="Amazon"],
+[data-bs-theme="dark"] .stock-logo-card img[alt~="Tesla"] {
+    filter: invert(1);
+}
+
+/* --- Shopping Cart --- */
+#cart-content .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--bs-border-color);
+}
+#cart-content .cart-item:last-child {
+    border-bottom: none;
+}
+#cart-total {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+/* --- Market Index Card Styles --- */
+a.index-card {
+    display: block;
+    text-decoration: none;
+}
+.index-card {
+    padding: 1rem;
+    border-radius: 0.75rem;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.index-card:hover {
+    transform: translateY(-3px);
+}
+.index-card.positive {
+    background-color: #16a34a;
+}
+.index-card.negative {
+    background-color: #dc2626;
+}
+.index-card .index-name {
+    font-size: 0.875rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+.index-card .index-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+.index-card .index-change {
+    font-size: 0.875rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- Portfolio Page Styles --- */
+.portfolio-summary-card {
+    background-color: var(--bs-tertiary-bg);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    height: 100%;
+}
