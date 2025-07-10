@@ -1,11 +1,5 @@
 # Stockly 📈
 
-Open your browser and visit:
-
-https://stockly-22828.web.app/
-
-
-
 **Your personal gateway to smarter investing**
 
 Welcome to **Stockly**, a university project built to provide users with a comprehensive **stock analysis** and **portfolio tracking** experience. The application is available as both a **mobile app** and a **web platform**, giving users the flexibility to stay connected to the markets anytime, anywhere.
@@ -19,6 +13,21 @@ This repository is organized into two primary branches:
 * **`main`** 📱 – Source code for the **Flutter Mobile App** (Android & iOS)
 * **`website`** 💻 – Source code for the **Web Application** (HTML, Tailwind CSS, JavaScript)
 
+---# Stockly 📈  
+Your personal gateway to smarter investing
+
+Welcome to **Stockly**, a university project built to provide users with a comprehensive stock analysis and portfolio tracking experience. The application is available as both a **mobile app** and a **web platform**, giving users the flexibility to stay connected to the markets anytime, anywhere.
+
+---
+
+## 📁 Branch Structure
+
+This repository is organized into two primary branches:
+
+- **`main` 📱** – Source code for the Flutter Mobile App (Android & iOS)  
+- **`website` 💻** – Source code for the Web Application (HTML, Bootstrap, JavaScript)
+
+---
 
 ## ✨ Features
 
@@ -60,9 +69,20 @@ This repository is organized into two primary branches:
 const FINNHUB_API_KEY = 'd1f7lvhr01qsg7davdsgd1f7lvhr01qsg7davdt0';
 ⚠️ For production, please register for your own free API key on Finnhub and replace the one above in script.js.
 
-👥 Developers
+👥 Project Team
+Developers
+Fadi Abbara
 
 Baraa Alkilany
+
+Anas Zahran
+
+Hayyan Azzam
+
+Supervisors
+Mohammed Nazeh Alimam
+
+Erkin Erdogan
 
 🚀 Getting Started
 📱 Mobile App (main branch)
@@ -113,13 +133,21 @@ Open XAMPP Control Panel
 
 Start the Apache module (should turn green)
 
+Open your browser and visit:
 
+arduino
+Copy
+Edit
+http://localhost/stockly-web/
 📬 Feedback
 We’d love to hear your thoughts or suggestions.
 Feel free to open an issue or submit a pull request!
 
 Thank you for checking out Stockly! 🚀
 
+vbnet
+Copy
+Edit
 
 You can paste this directly into your `README.md` file in VS Code. Let me know if you'd like a version with images, badges, or additional setup instructions!
 
@@ -153,6 +181,23 @@ You can paste this directly into your `README.md` file in VS Code. Let me know i
 
 * **Data Provider:** [Finnhub API](https://finnhub.io)
 
+---
+
+## 👥 Project Team
+
+**Developers**
+
+* Fadi Abbara
+* Baraa Alkilany
+* Anas Zahran
+* Hayyan Azzam
+
+**Supervisors**
+
+* Mohammed Nazeh Alimam
+* Erkin Erdogan
+
+---
 
 ## 🚀 Getting Started
 

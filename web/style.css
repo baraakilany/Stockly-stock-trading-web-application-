@@ -107,7 +107,7 @@ body {
     position: relative;
 }
 
-/* Rule for chart controls */
+/* **FIXED** Rule for chart controls */
 .chart-controls {
     position: relative;
     top: 0.4rem;
