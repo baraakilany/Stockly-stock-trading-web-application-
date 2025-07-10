@@ -300,8 +300,7 @@ function showAppToast(message, type = 'info') {
     state.appToast.show();
 }
 
-/**
- * **MODIFIED**
+/*
  * Updates all elements with the 'currency-display' class to the new currency.
  */
 function updateAllCurrencyDisplays() {
@@ -313,8 +312,7 @@ function updateAllCurrencyDisplays() {
     });
 }
 
-/**
- * **NEW**
+/*
  * Handles the logic for changing the currency and updating the UI.
  */
 async function handleCurrencyChange(newCurrency) {
@@ -1211,7 +1209,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('add-to-cart-btn').addEventListener('click', handleAddToCart);
     document.getElementById('search-input').addEventListener('input', handleSearchInput);
 
-    // **MODIFIED** Currency change handler
+    //Currency change handler
     document.getElementById('currency-menu').addEventListener('click', (e) => {
         if (e.target.tagName === 'A') {
             const newCurrency = e.target.dataset.currency;
