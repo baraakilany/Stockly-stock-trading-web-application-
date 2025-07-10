@@ -1,4 +1,3 @@
-// IMPORTANT: Replace with your actual Firebase project configuration
 const firebaseConfig = {
   apiKey: "AIzaSyC7ozNjYkUajQbRaLYnWtAz2KcHjW6pNQE",
   authDomain: "stockly-22828.firebaseapp.com",
